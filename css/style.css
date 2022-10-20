@@ -1,2 +1,132 @@
-/* delete these styles */
-p{margin:2rem;font-size:1.8rem;color:red;}code{font-size:1.6rem;font-weight:100;color:firebrick;}.blue{color:blue;}
+:root {
+  /*-- sets color variables --*/
+  --dark: #444;
+  --ltmid: #DDD;
+  --dkmid: #999;
+  --light: #F9F9F9;
+  --accent: #6495ed;
+}
+body {
+  color: var(--dark); /*-- sets default font color --*/
+  line-height: 1.4; /*-- sets default line height --*/
+}
+nav {
+  background-color: var(--ltmid); /*-- nav background --*/
+  padding: 1rem 2rem; /*-- inside padding --*/
+  display: flex; /*-- nav is a flex container --*/
+  min-height: 6rem; /*-- nav has a minimum height --*/
+  justify-content: space-between; /*-- excess space is distributed between flex children along the main axis --*/
+  align-items: center; /*-- flex children are centered on the cross axis  --*/
+}
+nav a {
+  padding-left: 1.5rem;
+  color: var(--dark); /*-- link color --*/
+  font-weight: 500; /*-- heavier type weight --*/
+  text-decoration: none; /*-- removes default link underline --*/
+  transition: all .2s ease-in-out; /*-- gives a transition for hover effects --*/
+}
+nav a:hover {
+  color: var(--accent); /*-- changes link color on hover --*/
+}
+a.logo {
+  flex-basis: 67%; /*-- makes the logo link take up most of the horizontal space --*/
+  text-transform: uppercase;
+  font-weight: 900;
+}
+a.trigram {
+  display: none; /*-- hides the hamburger menu item --*/
+  font-size: 3rem; /*-- makes it considerably larger --*/
+  align-self: stretch; /*-- tells it to fill the cross axis when present --*/
+}
+main {
+  padding: 1rem 2rem; /*-- adds inside space around the main content area --*/
+}
+.slideshow { /*-- replace these styles with your slideshow styles --*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55rem; 
+  border: 2px dashed var(--dkmid);
+  border-radius: 8px;
+  background-color: var(--light);
+  color: var(--dkmid);
+  position: relative; /*-- allows explicit positioning for children --*/
+}
+.controls button { /*-- you'll probably replace all .controls styles with your own --*/
+  cursor: pointer; /*-- changes hover cursor to the hand --*/
+  position: absolute; /*-- positions arrows absolutely--*/
+  width: auto; /*-- matches width of parent --*/
+  top: 40%; /*-- positions arrows from parent top --*/
+  color: var(--ltmid); /*-- arrow color --*/
+  background-color: transparent; /*-- hides button background --*/
+  border: none; /*-- removes default button border --*/
+  font-weight: 800; /*-- selects heavier font --*/
+  font-size: 8rem; /*-- sets arrow font size --*/
+  transition: 0.2s ease; /*-- sets transition speed for arrow hover--*/
+}
+.controls button:hover {
+  color: var(--accent); /*-- changes button color on hover --*/
+}
+.controls button:nth-child(1) {
+  left: 1rem; /*-- positions first arrow to the left --*/
+}
+.controls button:nth-child(2) {
+  right: 1rem; /*-- positions second arrow to the right --*/
+}
+.slideshow h2 { /*-- styles the placeholder text (probably safe to delete) --*/
+  font-size: 4rem;
+  text-shadow: 0px 0px px rgba(0,0,0,.35);
+}
+.grid-cont { /*-- styles the main grid container for media cards --*/
+  padding: 2rem 0;
+  display: grid; /*-- declares this a grid container --*/
+  grid-gap: 2rem; /*-- 2rem top, right, bottom, and left gaps between items --*/
+  grid-template-columns: 1fr; /*-- by default, there is 1 column that's 1fr wide --*/
+}
+@media screen and (min-width: 550px) { /*-- at slightly larger size, there are two equal columns --*/
+  .grid-cont {grid-template-columns: repeat(2, 1fr);}
+}
+@media screen and (min-width: 768px) { /*-- still two equal columns --*/
+  .grid-cont {grid-template-columns: repeat(2, 1fr);}
+}
+@media screen and (min-width: 1280px) { /*-- next size up, there are three equal columns --*/
+  .grid-cont {grid-template-columns: repeat(3, 1fr);}
+}
+@media screen and (min-width: 1440px) { /*-- at the largest sizes, there are four equal columns --*/
+  .grid-cont {grid-template-columns: repeat(4, 1fr);}
+}
+.card { /*-- selects .card elements --*/
+  padding: 2%; /*-- a little bit of flexible space inside the card --*/
+  display: flex; /*-- card is a flex container --*/
+  flex-direction: column; /*-- flow is downward --*/
+  border-radius: 8px; /*-- curved edges --*/
+  border: 2px dashed var(--dkmid); /*-- dashed border --*/
+  background-color: var(--light); /*-- a little bit of light color --*/
+}
+.card img { /*-- selects image children of .card --*/
+  width: 100%; /*-- full width of container --*/
+  height: auto; /*-- maintain aspect ratio --*/
+  max-height: 320px; /*-- can't be too tall --*/
+  border-radius: 8px 8px 0 0; /*-- curved corners, but just on the top --*/
+}
+.card button { /*-- selects button children of .card elements --*/
+  width: 30%; /*-- 1/3rd width of parent (the .card) --*/
+  min-width: 6rem; /*-- can't be too narrow --*/
+  margin: 2rem auto; /*-- centered it --*/
+  padding: 1rem 2rem; /*-- makes space inside the button --*/
+  cursor: pointer; /*-- changes the mouse cursor from arrow to pointer --*/
+}
+footer { /*-- just some footer styles, nothing weird --*/
+  margin-top: 2rem;
+  background-color: var(--ltmid);
+  padding: 1rem 2rem;
+  display: flex;
+  height: 6rem;
+  justify-content: space-between;
+  align-items: center;
+}
+footer p {
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
