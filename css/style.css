@@ -9,7 +9,13 @@ body {
   color: var(--dark); /*-- sets body default font color --*/
   line-height: 1.4; /*-- sets body default line height --*/
 }
-nav {
+/*-- default styles for links (in the correct order) --*/
+a {color: var(--accent); text-decoration: none; transition: all .2s ease-in-out;}
+a:visited {color:#305eb3;}
+a:hover {color: var(--dkmid);}
+a:active {color: var(--dkmid);}
+
+nav { /*-- main nav styles --*/
   background-color: var(--ltmid); /*-- nav background --*/
   padding: 1rem 2rem; /*-- inside padding --*/
   display: flex; /*-- nav is a flex container --*/
@@ -17,23 +23,23 @@ nav {
   justify-content: space-between; /*-- excess space is distributed between flex children along the main axis --*/
   align-items: center; /*-- flex children are centered on the cross axis  --*/
 }
-nav a {
+nav a { /*-- targets the nav links --*/
   padding-left: 1.5rem; /*-- keeps links separated --*/
   color: var(--dark); /*-- link color --*/
   font-weight: 500; /*-- heavier type weight --*/
   text-decoration: none; /*-- removes default link underline --*/
   transition: all .2s ease-in-out; /*-- gives a transition for hover effects --*/
 }
-nav a:hover {
+nav a:hover { /*-- nav links on hover --*/
   color: var(--accent); /*-- changes link color on hover --*/
 }
-a.logo {
+a.logo { /*-- nav link with .logo class --*/
   flex-basis: 67%; /*-- makes the logo link take up most of the horizontal space --*/
   text-transform: uppercase; /*-- makes logo link typographically distinct --*/
   font-weight: 900; /*-- heaviest font weight --*/
 }
-a.trigram {
-  display: none; /*-- hides the hamburger menu item --*/
+a.trigram { /*-- hamburger menu icon nav link --*/
+  display: none; /*-- hidden by default --*/
   font-size: 3rem; /*-- makes it considerably larger --*/
   align-self: stretch; /*-- tells it to fill the cross axis when present --*/
 }
@@ -74,6 +80,21 @@ main {
 }
 .slideshow h2 { /*-- styles the placeholder text (probably safe to delete) --*/
   font-size: 4rem; /*-- font is larger than normal --*/
+}
+.hero {
+  padding: 4rem 0; /*-- top and bottom padding for the container --*/
+  display: flex; /*-- declares a flex container --*/
+  flex-direction: column; /*-- direction downward --*/
+  justify-content: center; /*-- vertical center --*/
+  align-items: center; /*-- horizontal center --*/
+  background-color: var(--ltmid); /*-- light color --*/
+  border-radius: 8px; /*-- rounded corners --*/
+  width: 100vw; /*-- extra wide --*/
+  margin: 2rem 0 1rem -2rem; /*-- negative right margin compensates for extra width --*/
+}
+.hero > * { /*-- targets all direct children of .hero --*/
+  margin: 0; /*-- zeroes their margins --*/
+  padding: 0; /*-- zeroes their padding --*/
 }
 .grid-cont { /*-- styles the main grid container for media cards --*/
   padding: 2rem 0; /*-- top and bottom padding for the grid container --*/
