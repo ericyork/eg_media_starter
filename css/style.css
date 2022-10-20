@@ -88,7 +88,6 @@ main {
   justify-content: center; /*-- vertical center --*/
   align-items: center; /*-- horizontal center --*/
   background-color: var(--ltmid); /*-- light color --*/
-  border-radius: 8px; /*-- rounded corners --*/
   width: 100vw; /*-- extra wide --*/
   margin: 2rem 0 1rem -2rem; /*-- negative right margin compensates for extra width --*/
 }
