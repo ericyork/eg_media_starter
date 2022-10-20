@@ -10,7 +10,7 @@ body {
   line-height: 1.4; /*-- sets body default line height --*/
 }
 /*-- default styles for links (in the correct order) --*/
-a {color: var(--accent); text-decoration: none; transition: all .2s ease-in-out;}
+a {color: var(--accent); font-weight: 500; text-decoration: none; transition: all .2s ease-in-out;}
 a:visited {color:#305eb3;}
 a:hover {color: var(--dkmid);}
 a:active {color: var(--dkmid);}
