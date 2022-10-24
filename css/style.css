@@ -15,33 +15,43 @@ a:visited {color:#305eb3;}
 a:hover {color: var(--accent);}
 a:active {color: var(--dkmid);}
 
-nav { /*-- main nav styles --*/
+header.top-nav { /*-- main nav styles --*/
   background-color: var(--ltmid); /*-- nav background --*/
   padding: 1rem 2rem; /*-- inside padding --*/
-  display: flex; /*-- nav is a flex container --*/
-  min-height: 6rem; /*-- nav has a minimum height --*/
-  justify-content: space-between; /*-- excess space is distributed between flex children along the main axis --*/
-  align-items: center; /*-- flex children are centered on the cross axis  --*/
+  display: flex; /*-- header bar is a flex container --*/
+  min-height: 8rem; /*-- header bar has a minimum height --*/
+  justify-content: space-between; /*-- main axis space distribution --*/
+  align-items: center; /*-- cross axis space distribution --*/
+  position: relative; /*-- needed to absolutly position some children --*/
 }
-nav a { /*-- targets the nav links --*/
-  padding-left: 1.5rem; /*-- keeps links separated --*/
-  color: var(--dark); /*-- link color --*/
-  font-weight: 500; /*-- heavier type weight --*/
-  text-decoration: none; /*-- removes default link underline --*/
-  transition: all .2s ease-in-out; /*-- gives a transition for hover effects --*/
+nav { /*-- targets the links wrapper --*/
+  flex-basis: 30%; /*-- gives this flex child an ideal width --*/
+  display: flex; /*-- makes the child also a flex container --*/
+  justify-content: space-between; /*-- main axis space distribution --*/
 }
-nav a:hover { /*-- nav links on hover --*/
-  color: var(--accent); /*-- changes link color on hover --*/
+a.nav-link { /*-- targets individual links --*/
+  padding-left: 2.8rem; /*-- sets some minimum padding --*/
+  color: var(--dark); /*-- text color --*/
+  font-weight: 500; /*-- text weight --*/
+  text-decoration: none; /*-- removes underlines --*/
+  transition: all .2s ease-in-out; /*-- sets a transition for hover effects --*/
 }
-a.logo { /*-- nav link with .logo class --*/
-  flex-basis: 67%; /*-- makes the logo link take up most of the horizontal space --*/
-  text-transform: uppercase; /*-- makes logo link typographically distinct --*/
-  font-weight: 900; /*-- heaviest font weight --*/
+a.nav-link:hover {
+  color: var(--accent);  /*-- color on hover --*/
 }
-a.trigram { /*-- hamburger menu icon nav link --*/
-  display: none; /*-- hidden by default --*/
-  font-size: 3rem; /*-- makes it considerably larger --*/
-  align-self: stretch; /*-- tells it to fill the cross axis when present --*/
+a.nav-link.logo {  /*-- just the site title --*/
+  text-transform: uppercase; /*-- makes all caps --*/
+  font-weight: 900; /*-- set to heaviest font --*/
+}
+a#trigram { /*-- hamburger menu icon --*/
+  display: none;  /*-- default display is none --*/
+}
+a#trigram::before { /*-- uses ::before to change the menu icon --*/
+  content: '\2630'; /*-- sets it to show the hamburger icon --*/
+  font-size: 4rem; /*-- makes it very large --*/
+  position: relative; /*-- posititions it explicitly --*/
+  top: -.5rem; /*-- a little space from the top --*/
+  right: 0; /*-- flush right --*/
 }
 main {
   padding: 1rem 2rem; /*-- adds inside space around the main content area --*/

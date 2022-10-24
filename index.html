@@ -9,14 +9,16 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <nav id="site-nav" class="top-nav">
-    <a href="#" class="nav-links logo">Site Title</a>
-    <a href="#" class="nav-links">News</a>
-    <a href="#" class="nav-links">About</a>
-    <a href="#" class="nav-links">Specials</a>
-    <a href="#" class="nav-links">Contact</a>
-    <a href="#" class="nav-links trigram">&#9776;</a>
-  </nav>
+  <header class="top-nav">
+    <a href="#" class="nav-link logo">Site&nbsp;Title</a>
+    <nav id="site-nav" class="nav-wrap">
+      <a href="#" class="nav-link">News</a>
+      <a href="#" class="nav-link">About</a>
+      <a href="#" class="nav-link">Specials</a>
+      <a href="#" class="nav-link">Contact</a>
+    </nav>
+    <a href="#" class="nav-link" id="trigram" onclick="navToggle()"></a>
+  </header>
   <main>
     <section class="slideshow">
       <!--slider goes here-->
@@ -37,7 +39,7 @@
         <p>Purus semper eget duis at tellus at urna condimentum mattis pellentesque id nibh tortor id aliquet lectus proin nibh nisl condimentum id venenatis a condimentum</p>
         <button onclick="sampleFunction()">Click</button><!--when clicked, the function runs-->
       </article><!--end article.card-->
-
+      
       <!--
         add more article.cards inside this section
       -->
