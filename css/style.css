@@ -17,7 +17,7 @@ a:active {color: var(--dkmid);}
 
 header.top-nav { /*-- main nav styles --*/
   background-color: var(--ltmid); /*-- nav background --*/
-  padding: 1rem 2rem; /*-- inside padding --*/
+  padding: 1rem 2rem 1rem 0; /*-- inside padding --*/
   display: flex; /*-- header bar is a flex container --*/
   min-height: 8rem; /*-- header bar has a minimum height --*/
   justify-content: space-between; /*-- main axis space distribution --*/
